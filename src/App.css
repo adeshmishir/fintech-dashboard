@@ -49,3 +49,22 @@ body {
   color: white;
   cursor: pointer;
 }
+
+.transaction-list {
+  display: grid;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.transaction-item p {
+  margin: 4px 0 0;
+  color: #666;
+}
