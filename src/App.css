@@ -68,3 +68,30 @@ body {
   margin: 4px 0 0;
   color: #666;
 }
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.summary-grid div {
+  background: #f4f6f8;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.summary-grid p {
+  margin: 0 0 8px;
+  color: #666;
+}
+
+.summary-grid h3 {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

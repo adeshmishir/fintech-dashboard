@@ -20,7 +20,7 @@ function App() {
         <p>Track your income and expenses easily.</p>
       </header>
 
-      <Summary />
+      <Summary transactions={transactions} />
       <TransactionForm addTransaction={addTransaction} />
       <TransactionList transactions={transactions} />
       <SpendingChart />
