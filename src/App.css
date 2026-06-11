@@ -29,3 +29,23 @@ body {
   border-radius: 12px;
   margin-bottom: 20px;
 }
+
+.transaction-form {
+  display: grid;
+  gap: 12px;
+}
+
+.transaction-form input,
+.transaction-form select,
+.transaction-form button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.transaction-form button {
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
