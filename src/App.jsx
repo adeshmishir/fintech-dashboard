@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import TransactionForm from "./components/TransactionForm";
 import Summary from "./components/Summary";
@@ -7,7 +7,14 @@ import SpendingChart from "./components/SpendingChart";
 import InsightCard from "./components/InsightCard";
 
 function App() {
-  const [transactions, setTransactions] = useState([]);
+  const [transactions, setTransactions] = useState(() => {
+    const savedTransactions = localStorage.getItem("transactions");
+    return savedTransactions ? JSON.parse(savedTransactions) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+  }, [transactions]);
 
   function addTransaction(transaction) {
     setTransactions([...transactions, transaction]);
@@ -21,10 +28,13 @@ function App() {
       </header>
 
       <Summary transactions={transactions} />
-      <TransactionForm addTransaction={addTransaction} />
-      <TransactionList transactions={transactions} />
-      <SpendingChart />
-      <InsightCard />
+      
+<div className="dashboard-grid">
+  <TransactionForm addTransaction={addTransaction} />
+  <TransactionList transactions={transactions} />
+  <SpendingChart transactions={transactions} />
+  <InsightCard transactions={transactions} />
+</div>
     </div>
   );
 }
