@@ -48,10 +48,14 @@ function TransactionForm({ addTransaction }) {
 
   return (
     <div className="card">
-      <h2>Add Transaction</h2>
+      <div className="transaction-form-header">
+        <h2>Add Transaction</h2>
+        <p>Record income or spending in a few quick details.</p>
+      </div>
 
       <form className="transaction-form" onSubmit={handleSubmit}>
         <input
+          className="transaction-input"
           type="number"
           name="amount"
           placeholder="Amount"
@@ -60,6 +64,7 @@ function TransactionForm({ addTransaction }) {
         />
 
         <input
+          className="transaction-input"
           type="text"
           name="category"
           placeholder="Category"
@@ -67,12 +72,18 @@ function TransactionForm({ addTransaction }) {
           onChange={handleChange}
         />
 
-        <select name="type" value={formData.type} onChange={handleChange}>
+        <select
+          className="transaction-select"
+          name="type"
+          value={formData.type}
+          onChange={handleChange}
+        >
           <option value="expense">Expense</option>
           <option value="income">Income</option>
         </select>
 
         <input
+          className="transaction-input"
           type="date"
           name="date"
           value={formData.date}
@@ -80,14 +91,17 @@ function TransactionForm({ addTransaction }) {
         />
 
         <input
+          className="transaction-input"
           type="text"
           name="note"
-          placeholder="Note optional"
+          placeholder="Note (optional)"
           value={formData.note}
           onChange={handleChange}
         />
 
-        <button type="submit">Add Transaction</button>
+        <button className="transaction-button" type="submit">
+          Add Transaction
+        </button>
       </form>
     </div>
   );

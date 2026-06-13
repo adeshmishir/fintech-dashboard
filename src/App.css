@@ -30,6 +30,16 @@ body {
   margin-bottom: 20px;
 }
 
+.transaction-form-header h2 {
+  margin: 0 0 6px;
+}
+
+.transaction-form-header p {
+  margin: 0 0 16px;
+  color: #666;
+  font-size: 14px;
+}
+
 .transaction-form {
   display: grid;
   gap: 12px;
@@ -44,10 +54,45 @@ body {
   font-size: 14px;
 }
 
-.transaction-form button {
-  background: #222;
+.transaction-form input,
+.transaction-form select {
+  background: #fbfcfe;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+  transform: translateY(-1px);
+}
+
+.transaction-button {
+  background: linear-gradient(135deg, #111827, #2563eb);
   color: white;
   cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.transaction-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 24px rgba(37, 99, 235, 0.22);
+}
+
+.transaction-button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.16);
+}
+
+.card {
+  background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
 }
 
 .transaction-list {
